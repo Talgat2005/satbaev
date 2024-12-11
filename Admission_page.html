@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admission form</title>
+ 
+  <link rel="stylesheet" href="css/admission_style.css">
+ 
+	
+</head>
+<body>
+
+  <section class="header">
+    <nav>
+        <a href="index.html"><img src="https://satbayev.university/files/img/university/logo-nav-blue.svg" id="logo-img"></a>
+
+        <div class="nav-links" id="navLinks">
+          <span class="icon" onclick="hidemenu()">&#10005;</span>  
+          <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="Admission_page.html">Прием</a></li>
+                <li><a href="index.html#course_call">Курсы</a></li>
+                <li><a href="Contact_page.html">Контакты</a></li>
+            </ul>
+        </div> 
+        <span class="icon" onclick="showmenu()">&#9776;</span>
+    </nav>
+
+	<div class="wrapper">
+		<div class="r_form_wrap">
+			
+			<div class="title">
+				<p>Форма подачи заявления</p>
+			</div>
+			
+			<!-- Admission from -->
+			<div class="r_form">
+				<form method="post" onsubmit="sendmail(); reset(); return false;">
+					<div class="input_wrap">
+						<label for="yourname">Ваше имя</label>
+						<div class="input_item">
+							<i class="fa fa-user" id="icon"></i>
+							<input type="text" name="your name" class="input" id="yourname" placeholder="Введите имя" required>
+						</div>
+					</div>
+					<div class="input_wrap">
+						<label for="emailaddress">Ваш адрес электронной почты</label>
+						<div class="input_item">
+							<i class="fa fa-envelope" id="icon"></i>
+							<input type="text" name="email address" class="input" id="emailaddress" placeholder="Введите почты" required>
+						</div>
+					</div>
+
+					<div class="input_wrap">
+						<label for="phone">Номер</label>
+						<div class="input_item">
+							<i class="fa fa-phone-square" id="icon"></i>
+							<input type="number" name="phone" class="input" id="phone" placeholder="Введите номер телеона" required>
+						</div>
+					</div>
+					<div class="input_wrap">
+						<label>Пол</label>
+						<div class="input_radio">
+							<div class="input_radio_item">
+								<input type="radio" id="male" name="gender" class="radio" value="male" checked>
+								<label for="male" class="radio_mark">
+									<ion-icon class="i" name="male-sharp"></ion-icon>
+								Male</label>
+							</div>
+							<div class="input_radio_item">
+								<input type="radio" id="female" name="gender" class="radio" value="female">
+								<label for="female" class="radio_mark">
+									<ion-icon class="i" name="female-sharp"></ion-icon>
+									Female</label>
+							</div>
+							<div class="input_radio_item">
+								<input type="radio" id="others" name="gender" class="radio" value="others">
+								<label for="others" class="radio_mark">
+									<ion-icon class="i" name="male-female-sharp"></ion-icon>
+									Others</label>
+							</div>
+						</div>
+					</div>
+	
+					<div class="input_wrap">
+						<label for="dob">Дата рождения</label>
+						<div class="input_item">
+							<i class="fa fa-calendar" id="icon"></i>
+							<input type="date" name="dob" class="input" id="dob" required>
+						</div>
+					</div>
+
+					<div class="input_wrap">
+						<label for="course">Курсы</label>
+						<div class="input_item">
+							<i class="fa fa-caret-square-o-down" aria-hidden="true"id="icon" ></i>
+					<select id="course" name="cars" class="input" required>
+					<option value="select"> Выберите курс</option>
+					<option value="bca">Бакалавр</option>
+					<option value="bscit">Курсы PhD</option>
+					<option value="bscca&it">Онлайн обучение</option>
+					</select>
+					</div>
+					</div>
+
+
+					<div class="input_wrap">
+						<label for="file">Аттестат о среднем образовании</label>
+						<div class="input_item">
+							<i class="fa fa-file" id="icon"></i>
+							<input type="file" name="file" class="input" id="file" required>
+						</div>
+					</div>
+
+					<div class="input_wrap">
+						<label for="password">Пароль</label>
+						<div class="input_item">
+							<i class="fa fa-key" id="icon"></i>
+							<input type="password" name="password" class="input" id="password" placeholder="Введите пароль" >
+						</div>
+					</div>
+					<div class="input_wrap">
+						<label for="confirmpassword">Потвордите пароль</label>
+						<div class="input_item">
+							<i class="fa fa-check-circle" id="icon"></i>
+							<input type="password" name="confirm password" class="input" id="confirmpassword" placeholder="Подтверждение пароля">
+						</div>
+					</div>
+
+					
+					<input type="submit" class="button" value="Зарегистрироваться ">
+					
+					<div ></div>
+					<input type="reset" class="clear_ad" value="Очистить">
+					
+				</form>
+			</div>
+	
+		</div>
+	</div>
+	</section>
+	<div class="none_div">
+
+	</div>
+	</body>
+	<!-- Javascript for this Web page -->
+	<script src=" https://smtpjs.com/v3/smtp.js"></script>
+	<script>
+		function sendmail(){
+		Email.send({}).then(
+	message => alert("Thanks for filling out our form!")
+);
+		}
+	</script>
+	<script>
+	var navLinks= document.getElementById("navLinks");
+
+function showmenu(){
+    navLinks.style.right="0";
+}   
+function hidemenu(){
+    navLinks.style.right="-200px";
+}
+</script>
+</html>
